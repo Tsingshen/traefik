@@ -9,7 +9,7 @@ helm search traefik
 
 #https://hub.helm.sh/charts/stable/traefik
 helm install --name traefik --namespace kube-system \
---set rbac.enabled=true,ssl.enabled=true \
+--set rbac.enabled=true,ssl.enabled=true,kubernetes.ingressClass=traefik \
 dashboard.enabled=true,dashboard.board.auth.basic.$USER=$PW \
 azure/traefik 
 
