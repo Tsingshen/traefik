@@ -1,0 +1,16 @@
+使用helm
+
+helm安装，官网下载amd64包，然后按说明安装后，(配置好kubectl后，可以直接接入集群)
+helm repo add azure http://mirror.azure.cn/kubernetes/charts/
+helm version
+tiller升级，可以edit deployment/tiller-deploy，然后修改与helm版本一致。
+
+helm search traefik
+
+#https://hub.helm.sh/charts/stable/traefik
+helm install azure/traefik --name traefik --namespace kube-system 
+
+默认会创建loadbalancer
+
+## uninstall 
+helm delete traefik # the name installed traefik had. 
