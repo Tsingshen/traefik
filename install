@@ -8,7 +8,8 @@ tiller升级，可以edit deployment/tiller-deploy，然后修改与helm版本�
 helm search traefik
 
 #https://hub.helm.sh/charts/stable/traefik
-helm install azure/traefik --name traefik --namespace kube-system 
+helm install --name traefik --namespace kube-system \
+--set dashboard.enabled=true,dashboard.domain=123.com  azure/traefik 
 
 默认会创建loadbalancer
 
