@@ -9,7 +9,9 @@ helm search traefik
 
 #https://hub.helm.sh/charts/stable/traefik
 helm install --name traefik --namespace kube-system \
---set dashboard.enabled=true,dashboard.domain=123.com  azure/traefik 
+--set rbac.enabled=true,ssl.enabled=true \
+dashboard.enabled=true,dashboard.board.auth.basic.$USER=$PW \
+azure/traefik 
 
 默认会创建loadbalancer
 
